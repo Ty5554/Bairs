@@ -1,0 +1,22 @@
+<br>
+<div class="max-w-sm m-auto overflow-hidden rounded-lg shadow-lg cursor-pointer h-300 max-w-5xs sm:max-w-5sm md:max-w-5md lg:max-w-5lg xl:max-w-5xl">
+  <div class="block w-auto h-full bg-white">
+    <div class=" flex items-center justify-center" >
+      <%= form_with url: login_path do |f| %>
+        <div class="mb-3">
+          <%= f.label :email, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+          <%= f.email_field :email, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :password, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+          <%= f.password_field :password, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+        </div>
+        <%= f.submit "ログイン", class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" %>
+      <% end %>
+    </div>
+    <div class='text-center'>
+      <%= link_to '登録ページへ', new_user_path %>
+      <%= link_to 'パスワードをお忘れの方はこちら', '#' %>
+    </div>
+  </div>
+</div>
