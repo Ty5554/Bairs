@@ -8,6 +8,7 @@
   <div class="w-full lg:flex lg:items-center lg:w-auto">
     <div class="text-sm lg:flex-grow flex justify-center lg:justify-start">
       <%= link_to 'ビール投稿一覧', boards_path, class: 'block mt-4 lg:inline-block lg:mt-0 text-yellow-200 hover:text-white mr-4' %>
+      <%= link_to t('header.create_board'), new_board_path, class: 'block mt-4 lg:inline-block lg:mt-0 text-yellow-200 hover:text-white mr-4' %>
       <%= link_to t('header.logout'), logout_path,method: :delete, data: { turbo_method: :delete }, class: 'block mt-4 lg:inline-block lg:mt-0 text-yellow-200 hover:text-white mr-4' %>
     </div>
   </div>

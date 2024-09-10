@@ -1,4 +1,9 @@
 ja:
+  defaults:
+    flash_message:
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成できませんでした"
+      require_login: ログインしてください
   helpers:
     submit:
       create: 登録
@@ -17,6 +22,10 @@ ja:
     new:
       title: ユーザー登録
       to_login_page: ログインページへ
+  boards:
+    new:
+      title: ビール投稿作成
   header:
+    create_board: ビール投稿作成
     login: ログイン
     logout: ログアウト
