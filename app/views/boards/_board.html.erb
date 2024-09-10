@@ -1,6 +1,6 @@
 <div id="board-id-<%= board.id %>" class="max-w-sm w-full bg-white border border-gray-400 rounded-lg shadow-md overflow-hidden">
   <div class="h-48 bg-cover bg-center rounded-t-lg" style="background-image: url('../img/a1.JPG')" title="Woman holding a mug">
-    <%= image_tag "sample.jpg", class: "object-cover h-full w-full" %>
+    <%= image_tag board.board_image_url, class: "object-cover h-full w-full" %>
   </div>
   <div class="p-4">
     <div class="mb-4">
