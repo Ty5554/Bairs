@@ -1,0 +1,15 @@
+<div>
+ <form>
+  <div class="flex mb-3">
+    <input class="form-input flex-grow p-2 border border-gray-300 rounded-l" placeholder="検索ワード" type="search" />
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-r">検索</button>
+  </div>
+　</form>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center">
+<% if @boards.present? %>
+   <%= render @boards %>
+  <% else %>
+    <div>掲示板がありません</div>
+<% end %>
+</div>

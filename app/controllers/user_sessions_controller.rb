@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
     @user = login(params[:email], params[:password])
 
     if @user
-      redirect_to root_path, success: "ログインしました"
+      redirect_to boards_path, success: "ログインしました"
     else
       render :new
     end
