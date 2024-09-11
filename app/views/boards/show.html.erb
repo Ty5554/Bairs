@@ -1,0 +1,43 @@
+<div class="container mx-auto pt-5">
+  <div class="mb-3">
+    <div class="lg:w-2/3 lg:mx-auto">
+      <h1 class="text-2xl block mt-4 lg:inline-block lg:mt-0 text-yellow-200 hover:text-white mr-4"><%= t('.title') %></h1>
+      <article class="bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="p-5">
+          <div class="flex">
+            <div class="w-1/3">
+              <%= image_tag @board.board_image_url, width: "300", height: "200", class: "w-full h-auto rounded-lg" %>
+            </div>
+            <div class="w-2/3 pl-5">
+              <h3 class="inline text-xl font-semibold"><%= @board.title %></h3>
+              <div class='flex justify-end'>
+                <%= link_to "#", id: "button-edit-#{@board.id}" do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 2.487a2.25 2.25 0 013.182 3.182l-12 12-4.5 1.5 1.5-4.5 12-12z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 5.25L18.75 6" />
+                  </svg>
+                <% end %>
+                <%= link_to "#", id: "button-delete-#{@board.id}", class: "ml-2" do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 6.75l-.857 12.008A2.25 2.25 0 0116.402 21H7.598a2.25 2.25 0 01-2.241-2.242L4.5 6.75M9.75 9.75v7.5m4.5-7.5v7.5M3 6.75h18M12 3.75h.008v.008H12V3.75z" />
+                  </svg>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <p class="mt-4"><%= simple_format(@board.body) %></p>
+        </div>
+      </article>
+    </div>
+  </div>
+  <%= render 'comments/form', comment: @comment, board: @board %>
+  <div class="mb-5">
+    <div class="lg:w-2/3 lg:mx-auto">
+      <table class="min-w-full bg-white">
+        <tbody id="table-comment">
+          <%= render @comments %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

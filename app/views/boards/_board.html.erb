@@ -4,13 +4,18 @@
   </div>
   <div class="p-4">
     <div class="mb-4">
-      <div class="text-gray-900 font-bold text-xl mb-2"><%= link_to board.title, '#' %></div>
+      <div class="text-gray-900 font-bold text-xl mb-2"><%= link_to board.title, board_path(board) %></div>
       <div class="flex justify-end space-x-2">
-      <%= link_to '#', id: "button-edit-#{board.id}", class: "text-gray-600 hover:text-gray-900" do %>
-        <i class="bi bi-pencil-fill"></i>
+      <%= link_to "#", id: "button-edit-#{board.id}" do %>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 2.487a2.25 2.25 0 013.182 3.182l-12 12-4.5 1.5 1.5-4.5 12-12z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 5.25L18.75 6" />
+        </svg>
       <% end %>
-      <%= link_to '#', id: "button-delete-#{board.id}", method: :delete, data: { confirm: '' }, class: "text-gray-600 hover:text-gray-900" do %>
-        <i class="bi bi-trash-fill"></i>
+      <%= link_to "#", id: "button-delete-#{board.id}", class: "ml-2" do %>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 6.75l-.857 12.008A2.25 2.25 0 0116.402 21H7.598a2.25 2.25 0 01-2.241-2.242L4.5 6.75M9.75 9.75v7.5m4.5-7.5v7.5M3 6.75h18M12 3.75h.008v.008H12V3.75z" />
+        </svg>
       <% end %>
     </div>
       <p class="text-gray-700 text-base"><%= board.body %></p>

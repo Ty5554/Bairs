@@ -9,6 +9,7 @@ ja:
       create: 登録
       submit: 保存
       update: 更新
+      post: 投稿
     label:
       email: メールアドレス
       password: パスワード
@@ -25,6 +26,8 @@ ja:
   boards:
     new:
       title: ビール投稿作成
+    show:
+      title: 掲示板詳細
   header:
     create_board: ビール投稿作成
     login: ログイン
