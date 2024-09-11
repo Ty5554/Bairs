@@ -14,3 +14,10 @@
     <div>掲示板がありません</div>
 <% end %>
 </div>
+<div class="grid justify-items-center">
+<% if @boards.present? %>
+  <div class="mt-4">
+    <%= paginate @boards %>
+  </div>
+<% end %>
+</div>
