@@ -9,6 +9,7 @@ ja:
       create: 登録
       submit: 保存
       update: 更新
+      post: 投稿
     label:
       email: メールアドレス
       password: パスワード
