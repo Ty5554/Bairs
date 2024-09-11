@@ -25,6 +25,8 @@ ja:
   boards:
     new:
       title: ビール投稿作成
+    show:
+      title: 掲示板詳細
   header:
     create_board: ビール投稿作成
     login: ログイン
