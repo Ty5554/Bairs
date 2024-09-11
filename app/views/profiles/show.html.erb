@@ -1,0 +1,27 @@
+<br>
+<div class="m-auto overflow-hidden rounded-lg shadow-lg cursor-pointer h-300 max-w-5xs sm:max-w-5sm md:max-w-5md lg:max-w-5lg xl:max-w-5xl bg-white">
+<div class="container mx-auto pt-3">
+  <div class="flex justify-center">
+    <div class="w-full md:w-10/12">
+      <div class="flex justify-between items-center mb-5">
+        <h1 class="text-xl font-bold"><%= t('.title') %></h1>
+        <%= link_to t('defaults.edit'), edit_profile_path, class: 'btn btn-success bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded' %>
+      </div>
+      <table class="table-auto w-full">
+        <tr>
+          <th class="text-left font-semibold p-2"><%= User.human_attribute_name(:email) %></th>
+          <td class="p-2"><%= current_user.email %></td>
+        </tr>
+        <tr>
+          <th class="text-left font-semibold p-2"><%= User.human_attribute_name(:first_name) %></th>
+          <td class="p-2"><%= current_user.first_name %></td>
+        </tr>
+        <tr>
+          <th class="text-left font-semibold p-2"><%= User.human_attribute_name(:avatar) %></th>
+          <td class="p-2"><%= image_tag 'sample', class: 'rounded-full w-12 h-12' %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
