@@ -1,0 +1,36 @@
+<br>
+<div class="m-auto overflow-hidden rounded-lg shadow-lg cursor-pointer h-300 max-w-5xs sm:max-w-5sm md:max-w-5md lg:max-w-5lg xl:max-w-5xl bg-white">
+<div class="container mx-auto">
+  <div class="flex justify-center">
+    <div class="w-full md:w-5/6 lg:w-2/3">
+      <h1 class="text-2xl font-bold mb-6"><%= t('.title') %></h1>
+      <%= form_with model: @user, url: profile_path, method: :put, class: "space-y-6" do |f| %>
+        <div>
+          <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
+          <%= f.email_field :email, class: "mt-1 block w-full border-2 border-black rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" %>
+        </div>
+        <div>
+          <%= f.label :last_name, class: "block text-sm font-medium text-gray-700" %>
+          <%= f.text_field :last_name, class: "mt-1 block w-full border-2 border-black rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" %>
+        </div>
+        <div>
+          <%= f.label :first_name, class: "block text-sm font-medium text-gray-700" %>
+          <%= f.text_field :first_name, class: "mt-1 block w-full border-2 border-black rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" %>
+        </div>
+        <div>
+          <%= f.label :avatar, class: "block text-sm font-medium text-gray-700" %>
+          <%= f.file_field :avatar, class: "mt-1 block w-full text-sm text-gray-900 border-black rounded-md cursor-pointer focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+          <%= f.hidden_field :avatar_cache %>
+          <div class="mt-3">
+            <%= image_tag "sample", class: "rounded-full w-24 h-24", id: 'preview' %>
+          </div>
+        </div>
+        <%= f.submit class: "w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
+      <% end %>
+      <div class="text-center mt-6">
+        <%= link_to t('.to_login_page'), login_path, class: "text-indigo-600 hover:underline" %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

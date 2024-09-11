@@ -2,6 +2,7 @@ ja:
   defaults:
     create: 作成
     post: 投稿
+    edit: 編集
     delete_confirm: 削除しますか？
     flash_message:
       created: "%{item}を作成しました"
@@ -35,3 +36,8 @@ ja:
     create_board: ビール投稿作成
     login: ログイン
     logout: ログアウト
+  profiles:
+    show:
+      title: プロフィール
+    edit:
+      title: プロフィール編集
