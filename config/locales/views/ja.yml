@@ -1,15 +1,18 @@
 ja:
   defaults:
+    create: 作成
+    post: 投稿
+    delete_confirm: 削除しますか？
     flash_message:
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"
       require_login: ログインしてください
+      deleted: "%{item}を削除しました"
   helpers:
     submit:
       create: 登録
       submit: 保存
       update: 更新
-      post: 投稿
     label:
       email: メールアドレス
       password: パスワード
