@@ -32,7 +32,7 @@
   <%= render 'comments/form', comment: @comment, board: @board %>
   <div class="mb-5">
     <div class="lg:w-2/3 lg:mx-auto">
-      <table class="min-w-full bg-white">
+      <table class="min-w-full bg-white rounded-lg overflow-hidden">
         <tbody id="table-comment">
           <%= render @comments %>
         </tbody>
