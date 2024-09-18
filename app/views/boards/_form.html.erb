@@ -1,19 +1,31 @@
 <%= form_with model: @board, class: "space-y-4" do |f| %>
-<%= render 'shared/error_messages', model: f.object %>
-    <div class="mb-4">
-      <%= f.label :title, class: "block mt-4 lg:inline-block lg:mt-0 text-yellow-200 hover:text-white mr-4" %>
-      <%= f.text_field :title, class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+  <%= render 'shared/error_messages', model: f.object %>
+
+  <div class="mb-4">
+    <%= f.label :title, class: "block mt-4 lg:inline-block lg:mt-0 text-yellow-200 hover:text-white mr-4" %>
+    <%= f.text_field :title, class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+  </div>
+
+  <div class="mb-4">
+    <%= f.label :body, class: "block mt-4 lg:inline-block lg:mt-0 text-yellow-200 hover:text-white mr-4" %>
+    <%= f.text_area :body, class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm", rows: "10" %>
+  </div>
+
+  <div class="image-selection">
+    <%= f.label :board_image, "ビールを選択してください", class: "block mt-4 lg:inline-block lg:mt-0 text-yellow-200 hover:text-white mr-4"  %>
+    <div class="grid grid-cols-3 gap-4 justify-center">
+      <% ["beer1.png", "beer2.png", "beer3.png"].each do |image| %>
+        <div class="flex flex-col items-center">
+          <%= f.radio_button :board_image, image, class: "mb-2" %>
+          <%= image_tag image_path(image), size: "100x100", class: "rounded" %>
+        </div>
+      <% end %>
     </div>
-    <div class="mb-4">
-      <%= f.label :body, class: "block mt-4 lg:inline-block lg:mt-0 text-yellow-200 hover:text-white mr-4" %>
-      <%= f.text_area :body, class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm", rows: "10" %>
-    </div>
-    <div class="mb-4">
-      <%= f.label :board_image, class: "block text-gray-700 text-sm font-medium mb-1" %>
-      <%= f.file_field :board_image, class: "block w-full p-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" , accept: 'image/*' %>
-      <%= f.hidden_field :board_image_cache %>
-    </div>
-    <div class="flex justify-center" >
-      <%= f.submit 'Submit', class: "text-yellow-400 hover:text-white border border-yellow-400 transition hover:bg-yellow-500 duration-300 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-3xl px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900" %>
-    </div>
-  <% end %>
+  </div>
+
+  <div class="flex justify-center">
+    <%= f.submit 'Submit', class: "text-yellow-400 hover:text-white border border-yellow-400 transition hover:bg-yellow-500 duration-300 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-3xl px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900" %>
+  </div>
+<% end %>
+
+
