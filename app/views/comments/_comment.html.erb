@@ -1,9 +1,5 @@
 <tr id="comment-<%= comment.id %>" class="border-b">
   <!-- 画像表示部分 -->
-  <td class="w-16">
-    <%= image_tag "sample.png", class: "w-12 h-12 rounded-full" %>
-  </td>
-  
   <!-- コメント本文とユーザー名 -->
   <td class="pl-4">
     <p class="text-gray-700 mt-1"><%= simple_format(comment.body) %></p>
